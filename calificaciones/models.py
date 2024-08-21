@@ -9,6 +9,7 @@ from django.db import models
 
 
 class Comments(models.Model):
+    id = models.AutoField(primary_key=True)
     comment = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField()
 
@@ -18,6 +19,7 @@ class Comments(models.Model):
 
 
 class Departments(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(unique=True, max_length=100)
     description = models.TextField(blank=True, null=True)
 
@@ -27,15 +29,17 @@ class Departments(models.Model):
 
 
 class Employees(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     role = models.ForeignKey('Roles', models.DO_NOTHING)
     department = models.ForeignKey(Departments, models.DO_NOTHING)
-    experience_years = models.JSONField(blank=True, null=True)
+    experience_years = models.IntegerField(blank=True, null=True)
     contract_start_date = models.DateField(blank=True, null=True)
     contract_end_date = models.DateField(blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
     work_schedule = models.ForeignKey('Workschedules', models.DO_NOTHING, blank=True, null=True)
     created_at = models.DateTimeField()
+    img = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -43,6 +47,7 @@ class Employees(models.Model):
 
 
 class Roles(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(unique=True, max_length=50)
     description = models.TextField(blank=True, null=True)
 
@@ -52,6 +57,7 @@ class Roles(models.Model):
 
 
 class Scores(models.Model):
+    id = models.AutoField(primary_key=True)
     rating = models.CharField(max_length=9)
     score = models.IntegerField()
 
@@ -61,6 +67,7 @@ class Scores(models.Model):
 
 
 class Userratings(models.Model):
+    id = models.AutoField(primary_key=True)
     user = models.ForeignKey('Users', models.DO_NOTHING, blank=True, null=True)
     employee = models.ForeignKey(Employees, models.DO_NOTHING, blank=True, null=True)
     rating = models.ForeignKey(Scores, models.DO_NOTHING, blank=True, null=True)
@@ -73,6 +80,7 @@ class Userratings(models.Model):
 
 
 class Users(models.Model):
+    id = models.AutoField(primary_key=True)
     username = models.CharField(unique=True, max_length=50)
     email = models.CharField(unique=True, max_length=100)
     password = models.CharField(max_length=255)
@@ -84,6 +92,7 @@ class Users(models.Model):
 
 
 class Workschedules(models.Model):
+    id = models.AutoField(primary_key=True)
     schedule = models.CharField(max_length=50)
 
     class Meta:

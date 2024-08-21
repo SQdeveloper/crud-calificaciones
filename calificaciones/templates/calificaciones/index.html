@@ -63,40 +63,42 @@
       <span>Opciones</span>
     </div>
     <div class="body">
-      <div class="row">
-        <div>
-          <img src="" alt="perfil">
-          <aside>
-              <h2>Jose Quispe Mamani</h2>
-              <span>Personal Trainer</span>
-          </aside>
-        </div>
+      {% for employee in employees %}
+          <div class="row">
+            <div>
+              <img src={{employee.img}} alt="perfil">
+              <aside>
+                  <h2>{{employee.name}}</h2>
+                  <span>{{employee.role.name}}</span>
+              </aside>
+            </div>
 
-        <div>
-          <span>15-06-2022</span>
-        </div>
+            <div>
+              <span>{{employee.contract_start_date}}</span>
+            </div>
 
-        <div>
-          <span>15-06-2024</span>
-        </div>
+            <div>
+              <span>{{employee.contract_end_date}}</span>
+            </div>
 
-        <div>
-          <span>5am-2pm</span>
-        </div>
+            <div>
+              <span>{{employee.work_schedule_id}}</span>
+            </div>
 
-        <div>
-          <img src="" alt="x">
-          <img src="" alt="x">
-          <img src="" alt="x">
-          <img src="" alt="x">
-          <img src="" alt="x">
-        </div>
-        
-        <div>
-          <img src="" alt="a">
-          <img src="" alt="a">
-        </div>
-      </div>
+            <div>
+              <img src="" alt="x">
+              <img src="" alt="x">
+              <img src="" alt="x">
+              <img src="" alt="x">
+              <img src="" alt="x">
+            </div>
+            
+            <div>
+              <img src="" alt="a">
+              <img src="" alt="a">
+            </div>
+          </div>
+      {% endfor %}
     </div>
   </div>
 </div>
