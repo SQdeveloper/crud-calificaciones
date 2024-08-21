@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+:root {
+    --color-blue: #0069FF;
+    --color-gray: #F0EDED;
+    --font-primary: "Keania One";
+    --font-secondary: "Montserrat";
+}

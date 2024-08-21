@@ -1,0 +1,104 @@
+{% extends "base.html" %} {% block titulo %} Lista de clientes {% endblock %}
+{%block contenido %}
+
+<div class="content-calificaciones">  
+  <div class="filters">
+    <div class="content-input">
+      <img src="" alt="find">
+      <input type="text" placeholder="Buscar por nombre...">    
+    </div>
+
+    <div class="content-input">
+      <span>Cargo: </span>
+      <select class="select" name="" id="">
+        <option value="">Personal trainer</option>
+        <option value="">Servicio al cliente</option>
+      </select>
+    </div>
+
+    <div class="content-input">
+      <span>Local: </span>
+      <select class="select" name="" id="">
+        <option value="">Miraflores</option>
+        <option value="">Surco</option>
+        <option value="">La Molina</option>
+      </select>
+    </div>
+
+    <div class="content-input">
+      <span>Estrellas: </span>
+      <select class="select" name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+      </select>
+    </div>
+
+    <button class="button-blue">Crear usuario</button>
+  </div>
+
+  <div class="content-info">
+    <div>
+      <span>Total de trabajadores:</span>
+      <span>14</span>
+    </div>
+    <div class="pagination">
+      <button class="button-trans">Anterior</button>
+      <div class="number">
+        1
+      </div>
+      <button class="button-blue">Siguiente</button>
+    </div>
+  </div>
+
+  <div class="tabla">
+    <div class="header">
+      <span>Trabajador</span>
+      <span>Inicio de contrato</span>
+      <span>Fin de contrato</span>
+      <span>Horario</span>
+      <span>Estrellas</span>
+      <span>Opciones</span>
+    </div>
+    <div class="body">
+      <div class="row">
+        <div>
+          <img src="" alt="perfil">
+          <aside>
+              <h2>Jose Quispe Mamani</h2>
+              <span>Personal Trainer</span>
+          </aside>
+        </div>
+
+        <div>
+          <span>15-06-2022</span>
+        </div>
+
+        <div>
+          <span>15-06-2024</span>
+        </div>
+
+        <div>
+          <span>5am-2pm</span>
+        </div>
+
+        <div>
+          <img src="" alt="x">
+          <img src="" alt="x">
+          <img src="" alt="x">
+          <img src="" alt="x">
+          <img src="" alt="x">
+        </div>
+        
+        <div>
+          <img src="" alt="a">
+          <img src="" alt="a">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
